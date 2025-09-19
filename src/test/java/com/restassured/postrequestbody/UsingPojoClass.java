@@ -13,11 +13,11 @@ public class UsingPojoClass {
 	void testUsingPojoClass() {
 		
 		POJO_POSTRequest data = new POJO_POSTRequest();
-		data.setName("Scott");
-		data.setLocaltion("USA");
+		data.setName("scott");
+		data.setLocation("USA");
 		data.setPhone("778899875");
 		String coursesArray [] = {"C","C++"};
-		data.setCourse(coursesArray);
+		data.setCourses(coursesArray);
 		
 		given()
 		.contentType("application/json")
