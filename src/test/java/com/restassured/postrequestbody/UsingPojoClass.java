@@ -4,5 +4,8 @@ import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.Matchers.*;
 
 public class UsingPojoClass {
+	
+	
+	
 
 }
