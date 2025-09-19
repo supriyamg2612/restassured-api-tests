@@ -45,11 +45,11 @@ public class UsingHashmap {
 	
 		   // id=5 will get created automatically
 	
-	@Test (priority = 2)
+	//@Test (priority = 2)
 	void deleteTheCreatedUser() {
 		given()
 		.when()
-				.delete("http://localhost:3000/students/5")
+				.delete("http://localhost:3000/students/")
 				.then()
 		   		   .statusCode(200)
 		   		   .log().all();
