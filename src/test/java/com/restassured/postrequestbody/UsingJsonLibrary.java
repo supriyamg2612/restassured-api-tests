@@ -1,9 +1,8 @@
 package com.restassured.postrequestbody;
 
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
-
-import java.lang.annotation.Target;
+import static io.restassured.RestAssured.*;
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import static org.hamcrest.Matchers.*;
 
 import org.json.JSONObject;
 import org.testng.annotations.Test;
@@ -15,7 +14,7 @@ public class UsingJsonLibrary {
 	void testUsingJsonLibrary() {
 		
 		JSONObject data = new JSONObject();
-		data.put("name", "scott");
+		data.put("name", "Lester");
 		data.put("location","USA");
 		data.put("phone","778899875");
 		
@@ -39,7 +38,7 @@ public class UsingJsonLibrary {
 	    .then()
 	    	    .statusCode(201)
 	    	    .header("content-type","application/json; charset=utf-8")
-	    	    .body("name", equalTo("scott"))
+	    	    .body("name", equalTo("Lester"))
 			    .body("location", equalTo("USA"))
 			    .body("phone", equalTo("778899875"))
 			    .body("courses[0]", equalTo("C"))
@@ -52,7 +51,7 @@ public class UsingJsonLibrary {
 		void deleteTheCreatedUser() {
 			given()
 			.when()
-					.delete("http://localhost:3000/students/8")
+					.delete("http://localhost:3000/students/5")
 					.then()
 			   		   .statusCode(200)
 			   		   .log().all();

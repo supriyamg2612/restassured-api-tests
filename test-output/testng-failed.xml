@@ -5,7 +5,7 @@
     <classes>
       <class name="com.restassured.postrequestbody.UsingPojoClass">
         <methods>
-          <include name="testUsingPojoClass"/>
+          <include name="deleteTheCreatedUser"/>
         </methods>
       </class> <!-- com.restassured.postrequestbody.UsingPojoClass -->
     </classes>

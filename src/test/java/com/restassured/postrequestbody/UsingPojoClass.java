@@ -9,11 +9,11 @@ import org.testng.annotations.Test;
 
 public class UsingPojoClass {
 	
-	@Test
+	@Test(priority = 1)
 	void testUsingPojoClass() {
 		
 		POJO_POSTRequest data = new POJO_POSTRequest();
-		data.setName("scott");
+		data.setName("Lester");
 		data.setLocation("USA");
 		data.setPhone("778899875");
 		String coursesArray [] = {"C","C++"};
@@ -30,7 +30,7 @@ public class UsingPojoClass {
 	    .then()
 	    	    .statusCode(201)
 	    	    .header("content-type","application/json; charset=utf-8")
-	    	    .body("name", equalTo("scott"))
+	    	    .body("name", equalTo("Lester"))
 			    .body("location", equalTo("USA"))
 			    .body("phone", equalTo("778899875"))
 			    .body("courses[0]", equalTo("C"))
@@ -40,5 +40,16 @@ public class UsingPojoClass {
 
 	}
 	
+	
+	@Test (priority = 2)
+	void deleteTheCreatedUser() {
+		given()
+		.when()
+				.delete("http://localhost:3000/students/5")
+				.then()
+		   		   .statusCode(200)
+		   		   .log().all();
+	}
+
 
 }

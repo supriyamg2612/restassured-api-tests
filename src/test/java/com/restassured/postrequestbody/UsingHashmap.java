@@ -15,7 +15,7 @@ public class UsingHashmap {
 	void testUsingHashamp() {
 		
 		HashMap data = new HashMap();
-		data.put("name", "scott");
+		data.put("name", "Lester");
 		data.put("location","USA");
 		data.put("phone","778899875");
 		
@@ -35,7 +35,7 @@ public class UsingHashmap {
 		.then()
 		    .statusCode(201)
 		    .header("content-type","application/json; charset=utf-8")
-		    .body("name", equalTo("scott"))
+		    .body("name", equalTo("Lester"))
 		    .body("location", equalTo("USA"))
 		    .body("phone", equalTo("778899875"))
 		  .body("cources[0]", equalTo("C"))
