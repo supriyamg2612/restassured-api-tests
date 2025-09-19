@@ -10,18 +10,35 @@ The project demonstrates basic **CRUD operations (Create, Read, Update, Delete)*
 
 ---
 
-## 📌 Features
-- API testing with **Rest Assured**
-- Test execution using **TestNG**
-- Covers basic **CRUD operations**
-  - ✅ Get list of users
-  - ✅ Create new user
-  - ✅ Update existing user
-  - ✅ Delete user
-- Response validation using **Hamcrest matchers**
-- Logging requests & responses for debugging
+📌 Features
 
----
+API testing with Rest Assured
+
+Test execution using TestNG
+
+Covers basic CRUD operations
+
+✅ Get list of users (ReqRes API)
+
+✅ Create new student (JSON Server)
+
+✅ Delete student
+
+Request body creation using four approaches:
+
+HashMap
+
+org.json library
+
+POJO class
+
+External JSON file
+
+Query and Path Parameters example (using ReqRes API)
+
+Response validation with Hamcrest matchers
+
+Logging requests & responses for debugging
 
 ## 🛠️ Tech Stack
 - **Java** (JDK 11+ recommended)
