@@ -41,11 +41,21 @@ public class UsingHashmap {
 		  .body("cources[0]", equalTo("C"))
 		  .body("cources[1]", equalTo("C++"))
 		   .log().all();
-		
-		    
+	}
+	
+		   // id=5 will get created automatically
+	
+	@Test
+	void deleteTheCreatedUser() {
+		given()
+		.when()
+				.delete("http://localhost:3000/students/5")
+				.then()
+		   		   .statusCode(200)
+		   		   .log().all();
+	}
 
 		
 		
 	}
 
-}
