@@ -1,7 +1,11 @@
 package com.restassured.postrequestbody;
 
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+
 import java.lang.annotation.Target;
 
+import org.json.JSONObject;
 import org.testng.annotations.Test;
 
 public class UsingJsonLibrary {
@@ -10,11 +14,50 @@ public class UsingJsonLibrary {
 	@Test(priority = 1)
 	void testUsingJsonLibrary() {
 		
+		JSONObject data = new JSONObject();
+		data.put("name", "scott");
+		data.put("location","USA");
+		data.put("phone","778899875");
 		
-		
-		
-		
-		
-	}
+		String courseArray []=  {"C","C++"};
+		data.put("courses", courseArray);
 
+		
+		
+		
+		given()
+				.contentType("application/json")
+		        .body(data.toString())   // ensure proper serialization
+
+	    
+	    
+	    .when()
+	    .post("http://localhost:3000/students")
+
+	    	
+	    	
+	    .then()
+	    	    .statusCode(201)
+	    	    .header("content-type","application/json; charset=utf-8")
+	    	    .body("name", equalTo("scott"))
+			    .body("location", equalTo("USA"))
+			    .body("phone", equalTo("778899875"))
+			    .body("courses[0]", equalTo("C"))
+				 .body("courses[1]", equalTo("C++"))
+				 .log().all();
+	}
+	
+	
+		@Test (priority = 2)
+		void deleteTheCreatedUser() {
+			given()
+			.when()
+					.delete("http://localhost:3000/students/8")
+					.then()
+			   		   .statusCode(200)
+			   		   .log().all();
+		}
+
+			
+		
 }
