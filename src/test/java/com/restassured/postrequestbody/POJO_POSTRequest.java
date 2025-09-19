@@ -3,6 +3,11 @@ package com.restassured.postrequestbody;
 public class POJO_POSTRequest {
 	
 	
+	String localtion;
+	String phone;
+	String course[];
+	
+	
 	String name;
 	public String getName() {
 		return name;
@@ -28,9 +33,6 @@ public class POJO_POSTRequest {
 	public void setCourse(String[] course) {
 		this.course = course;
 	}
-	String localtion;
-	String phone;
-	String course[];
 	
 
 }
