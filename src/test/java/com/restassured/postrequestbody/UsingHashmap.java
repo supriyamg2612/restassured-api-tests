@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 public class UsingHashmap {
 	
 	
-	@Test
+	@Test(priority = 1)
 	void testUsingHashamp() {
 		
 		HashMap data = new HashMap();
@@ -45,7 +45,7 @@ public class UsingHashmap {
 	
 		   // id=5 will get created automatically
 	
-	@Test
+	@Test (priority = 2)
 	void deleteTheCreatedUser() {
 		given()
 		.when()
