@@ -21,9 +21,9 @@ public class UsingHashmap {
 		
 		
 		//create a course array because we have multiple cources
-		String courceArray []=  {"C","C++"};
+		String courseArray []=  {"C","C++"};
 		
-		data.put("cources", courceArray);
+		data.put("courses", courseArray);
 		
 		given()
 		    .contentType("application/json")
@@ -38,8 +38,8 @@ public class UsingHashmap {
 		    .body("name", equalTo("Lester"))
 		    .body("location", equalTo("USA"))
 		    .body("phone", equalTo("778899875"))
-		  .body("cources[0]", equalTo("C"))
-		  .body("cources[1]", equalTo("C++"))
+		  .body("courses[0]", equalTo("C"))
+		  .body("courses[1]", equalTo("C++"))
 		   .log().all();
 	}
 	
